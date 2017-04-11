@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  $Id: persistence.xml 1527 2016-10-11 12:44:44Z Andre $ 
+  $Author: Andre $
+  $Date: 2016-10-11 14:44:44 +0200 (Tue, 11 Oct 2016) $
+  
+  $Rev: 1527 $
+  
+  $LastChangedBy: Andre $ 
+  $LastChangedRevision: 1527 $
+  $LastChangedDate: 2016-10-11 14:44:44 +0200 (Tue, 11 Oct 2016) $
+  
+  $URL: https://dev2:8443/svn/HALO170/trunk172/EVIAdmin/src/main/resources/META-INF/persistence.xml $
+  
+  (C) 2016 Stellr  All Rights Reserved 
+  
+-->
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="StoresAdminPU" transaction-type="JTA">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>stellr.util.stores.admin.data.Store</class>
+        <class>stellr.util.stores.admin.data.Adress</class>
+        <class>stellr.util.stores.admin.data.Catalogue</class>
+        <class>stellr.util.stores.admin.data.Distributionpartner</class>
+        <class>stellr.util.stores.admin.data.Distributionpartneraggregator</class>
+        <class>stellr.util.stores.admin.data.Mechantcategory</class>
+        <class>stellr.util.stores.admin.data.Store</class>
+        <class>stellr.util.stores.admin.data.Storetype</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <shared-cache-mode>ALL</shared-cache-mode>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/halo161?zeroDateTimeBehavior=convertToNull"/>
+            <property name="javax.persistence.jdbc.password" value="flowcore15"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="flowcore15"/>
+        </properties>
+    </persistence-unit>
+</persistence>

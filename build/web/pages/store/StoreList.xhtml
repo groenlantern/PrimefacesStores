@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+$Id$ 
+$Author$
+$Date$
+ 
+$Rev$
+ 
+$LastChangedBy$ 
+$LastChangedRevision$
+$LastChangedDate$
+ 
+$URL$
+ 
+(C) 2016 Stellr  All Rights Reserved
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/WEB-INF/templates/layout.xhtml">
+
+
+        <ui:define name="titlebar">
+            <h:outputText value="#{bundle.ListStoreTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="content">
+            <h:form id="StoreListForm">
+                <p:panel>
+                    <p:dataTable id="datalist" value="#{storesController.storeItems}" var="item"
+                                 selectionMode="single" selection="#{storesController.selectedStore}"
+                                 paginator="true"
+                                 rowKey="#{item.storeid}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton "/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton "/>
+
+                        <p:column styleClass="narrowCol  amountCol">
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.StoreTitle_StoreID }"/>
+                            </f:facet>
+                            <h:outputText value="#{item.storeid}"/>
+                        </p:column>
+
+                        <p:column styleClass="   ">
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.CreateStoreTitle_dp}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.distName}"/>
+                        </p:column>                        
+                        
+                        <p:column styleClass="longCol  " >
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListStoreTitle_Storename}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.storename}"/>
+                        </p:column>
+                        
+                        <p:column styleClass="amountCol" >
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.StoreTitle_StorePhone}"/>
+                            </f:facet>
+                            
+                            <h:outputText value="#{item.phonenumber}" />
+                        </p:column>
+                        
+                        <p:column styleClass="amountCol" >
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.StoreTitle_SourceIdentifier}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.sourceidentifier}"/>
+                        </p:column>
+                                                
+                        <p:column styleClass="amountCol">
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ViewStoreTitle_Storetype}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.stypeDesc}" />
+                        </p:column>
+                        
+                        <p:column styleClass="dateTimeCol centreCol " >
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.StoreTitle_CreateDate}"/>
+                            </f:facet>                            
+                            <h:outputText value="#{item.createddate}" />
+                        </p:column>
+
+                        <p:column styleClass="mediumCol centreCol">
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListStoreTitle_active}"/>
+                            </f:facet>
+                            <p:selectBooleanCheckbox value="#{item.active}" disabled="true"/>
+                        </p:column>
+
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{storesController.prepareCreate}" update=":StoreCreateForm" oncomplete="PF('StoreCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}"   update=":StoreViewForm"   oncomplete="PF('StoreViewDialog').show()"   disabled="#{empty storesController.selectedStore}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}"   update=":StoreEditForm"   oncomplete="PF('StoreEditDialog').show()"   disabled="#{empty storesController.selectedStore}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-pencil" value="#{bundle.Delete}" update=":StoreDeleteForm" oncomplete="PF('StoreDeleteDialog').show()" disabled="#{empty storesController.selectedStore}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="StoreCreate.xhtml"/>
+            <ui:include src="StoreEdit.xhtml"/>
+            <ui:include src="StoreView.xhtml"/>
+            <ui:include src="StoreDelete.xhtml"/>
+            <ui:include src="StoreDeleteConfirm.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+$Id$ 
+$Author$
+$Date$
+ 
+$Rev$
+ 
+$LastChangedBy$ 
+$LastChangedRevision$
+$LastChangedDate$
+ 
+$URL$
+ 
+(C) 2016 Stellr  All Rights Reserved
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="StoreDeleteDlg" widgetVar="StoreDeleteDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.Delete}">
+            <h:form id="StoreDeleteForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="4" rendered="#{storesController.selectedStore != null}">
+                        
+                        <p:outputLabel value="#{bundle.StoreLabel_StoreID}" />
+                        <p:outputLabel value="#{storesController.selectedStore.storeid}"/>                                            
+                                                
+                        <p:outputLabel value="#{bundle.ListStoreTitleCrt_Storename}"  />
+                        <p:outputLabel value="#{storesController.selectedStore.storename}"/>                                            
+                        
+                        <p:outputLabel value="#{bundle.CreateStoreLabel_dp}" />  
+                        <p:outputLabel value="#{storesController.selectedStore.distName}"/>                        
+  
+                        <p:outputLabel value="#{bundle.ViewStoreLabel_Storetype}"  />
+                        <p:outputLabel value="#{storesController.selectedStore.stypeDesc}"/>                        
+                        
+                        <p:outputLabel value="#{bundle.ListStoreTitleCrt_active}"  />
+                        <p:outputLabel value="#{storesController.selectedStore.active}"/>               
+                        
+                        <p:outputLabel value=" "  />
+                        <p:outputLabel value=" "  />
+                        
+                        <p:outputLabel value=" "  />
+                        <p:outputLabel value=" "  />
+                        <p:outputLabel value=" "  />
+                        <p:outputLabel value=" "  />
+                        
+                        <p:outputLabel value="#{bundle.StoreTitleCrt_address_line}" />
+                        <p:outputLabel value="#{storesController.selectedStore.address_main}"/>
+                         
+                        <p:outputLabel value="#{bundle.StoreTitleCrt_address_region}" />
+                        <p:outputLabel value="#{storesController.selectedStore.region}"/>
+
+                        <p:outputLabel value="#{bundle.StoreTitleCrt_address_city}" />
+                        <p:outputLabel value="#{storesController.selectedStore.city}"/>
+
+                        <p:outputLabel value="#{bundle.StoreTitleCrt_address_country}" />
+                        <p:outputLabel value="#{storesController.selectedStore.country}"/>
+
+                        <p:outputLabel value="#{bundle.StoreTitleCrt_address_postalcode}" />
+                        <p:outputLabel value="#{storesController.selectedStore.postalcode}"/>
+                        
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Delete}" 
+                                     oncomplete="PF('StoreDeleteCFDialog').show();"/>
+                                        
+                    <p:commandButton value="#{bundle.Cancel}" 
+                                     onclick="StoreDeleteDialog.hide()"
+                                     ajax="false" 
+                                     immediate="true"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+$Id$ 
+$Author$
+$Date$
+ 
+$Rev$
+ 
+$LastChangedBy$ 
+$LastChangedRevision$
+$LastChangedDate$
+ 
+$URL$
+ 
+(C) 2016 Stellr  All Rights Reserved
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="StoreEditDlg" 
+                  widgetVar="StoreEditDialog" 
+                  modal="true" 
+                  resizable="false" 
+                  appendTo="@(body)"
+                  header="#{bundle.EditStoreTitle}">
+            
+            <h:form id="StoreEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="4" 
+                                 rendered="#{storesController.selectedStore != null}">
+
+                        
+                        <p:outputLabel value="#{bundle.StoreLabel_StoreID}" />
+                        <p:outputLabel value="#{storesController.selectedStore.storeid}"/>                                            
+                        
+                        
+                        <p:outputLabel value="#{bundle.ListStoreTitleCrt_Storename}" for="storename" />
+                        <p:inputText id="storename" 
+                                     value="#{storesController.selectedStore.storename}" 
+                                     title="#{bundle.ListStoreTitle_Storename}" 
+                                     required="true" 
+                                     style="width:250px;" />
+
+                        
+                        <p:outputLabel value="#{bundle.CreateStoreLabel_dp}" for="dp" />  
+                        <p:selectOneMenu id="dp" 
+                                         value="#{storesController.distributionpartner_distributionpartnerid}"  
+                                         required="true" 
+                                         requiredMessage="#{bundle.CreateStoreRequiredMessage_dp}" 
+                                         style="width:250px;" >
+                            
+                            <f:selectItem itemDisabled="true" 
+                                          itemLabel="#{bundle.Select_One}" />
+                            
+                            <f:selectItems value="#{storesController.dps}"
+                                           var="dpItem"
+                                           itemLabel="#{dpItem.name}"
+                                           itemValue="#{dpItem.distributionpartnerid}"/>
+                                                        
+                        </p:selectOneMenu>
+                        
+  
+                        <p:outputLabel value="#{bundle.StoreLabel_Storeemail}" for="email" />
+                        <p:inputText id="email" 
+                                     value="#{storesController.selectedStore.email}" 
+                                     title="#{bundle.StoreTitle_Storeemail}" 
+                                     style="width:250px;" />
+                            
+                        <p:outputLabel value="#{bundle.StoreTitle_StorePhone}" for="phonenumber" />                            
+                        <p:inputText id="phonenumber" 
+                                     value="#{storesController.selectedStore.phonenumber}" 
+                                     title="#{bundle.StoreTitle_StorePhone}" 
+                                     style="width:250px;" />
+                                                
+                        <p:outputLabel value="#{bundle.StoreTitle_SourceIdentifier}" for="sourceidentifier"/>
+                        <p:inputText id="sourceidentifier" 
+                                     value="#{storesController.selectedStore.sourceidentifier}" 
+                                     title="#{bundle.StoreTitle_SourceIdentifier}" 
+                                     required="true"  />
+                                                                        
+
+                        <p:outputLabel value="#{bundle.ViewStoreLabel_Storetype}" for="stp" />
+                        <p:selectOneMenu id="stp" 
+                                         value="#{storesController.storetypecode}"  
+                                         required="true" 
+                                         requiredMessage="#{bundle.EditStoreRequiredMessage_StoreType}" >
+                            
+                            <f:selectItem itemDisabled="true" 
+                                          itemLabel="#{bundle.Select_One}" />
+                            
+                            <f:selectItems value="#{storesController.stps}"
+                                           var="stpItem"
+                                           itemLabel="#{stpItem.storetypedescription}"
+                                           itemValue="#{stpItem.storetypecode}"/>
+                                                        
+                        </p:selectOneMenu>
+                        
+                        
+                        <p:outputLabel value="#{bundle.ListStoreTitleCrt_active}" for="active" />
+                        <p:selectBooleanCheckbox id="active" 
+                                                 value="#{storesController.selectedStore.active}" 
+                                                 required="true" />
+               
+                        
+                        <p:outputLabel value=" "  />
+                        <p:outputLabel value=" "  />
+                        <p:outputLabel value=" "  />
+                        <p:outputLabel value=" "  />
+
+                        
+                        <p:outputLabel value="#{bundle.StoreTitleCrt_address_line}" for="address_line"/>
+                        <p:inputText id="address_line" 
+                                     value="#{storesController.selectedStore.address_main}" 
+                                     title="#{bundle.StoreTitle_address_line}" 
+                                     required="true"  />
+
+                        <p:outputLabel value="#{bundle.StoreTitleCrt_address_gps_lon}" for="address_gps_lon"/>
+                        <p:inputText id="address_gps_lon" 
+                                     value="#{storesController.selectedStore.gps_lon}" 
+                                     title="#{bundle.StoreTitle_address_gps_lon}" />
+                        
+                        <p:outputLabel value="#{bundle.StoreTitleCrt_address_block}" for="address_block"/>
+                        <p:inputText id="address_block" 
+                                     value="#{storesController.selectedStore.address_block}" 
+                                     title="#{bundle.StoreTitle_address_block}" 
+                                       />
+
+                        <p:outputLabel value="#{bundle.StoreTitleCrt_address_gps_lat}" for="address_gps_lat"/>
+                        <p:inputText id="address_gps_lat" 
+                                     value="#{storesController.selectedStore.gps_lat}" 
+                                     title="#{bundle.StoreTitle_address_gps_lat}"  />
+                        
+                        <p:outputLabel value="#{bundle.StoreTitleCrt_address_building}" for="address_building"/>
+                        <p:inputText id="address_building" 
+                                     value="#{storesController.selectedStore.address_building}" 
+                                     title="#{bundle.StoreTitle_address_building}" 
+                                       />
+
+                        <p:outputLabel value="#{bundle.StoreTitleCrt_address_floor}" for="address_floor"/>
+                        <p:inputText id="address_floor" 
+                                     value="#{storesController.selectedStore.address_floor}" 
+                                     title="#{bundle.StoreTitle_address_floor}"  />
+
+                        <p:outputLabel value="#{bundle.StoreTitleCrt_address_shopNo}" for="address_shopNo"/>
+                        <p:inputText id="address_shopNo" 
+                                     value="#{storesController.selectedStore.address_shopNo}" 
+                                     title="#{bundle.StoreTitle_address_shopNo}"  />
+
+
+                        <p:outputLabel value="#{bundle.StoreTitleCrt_address_region}" for="address_region"/>
+                        <p:inputText id="address_region" 
+                                     value="#{storesController.selectedStore.region}" 
+                                     title="#{bundle.StoreTitle_address_region}" 
+                                     required="true"  />
+
+                        <p:outputLabel value="#{bundle.StoreTitleCrt_address_city}" for="address_city"/>
+                        <p:inputText id="address_city" 
+                                     value="#{storesController.selectedStore.city}" 
+                                     title="#{bundle.StoreTitle_address_city}" 
+                                     required="true"  />
+
+                        <p:outputLabel value="#{bundle.StoreTitleCrt_address_country}" for="address_country"/>
+                        <p:inputText id="address_country" 
+                                     value="#{storesController.selectedStore.country}" 
+                                     title="#{bundle.StoreTitle_address_country}" 
+                                     required="true"  />
+
+                        <p:outputLabel value="#{bundle.StoreTitleCrt_address_postalcode}" for="address_postalcode"/>
+                        <p:inputText id="address_postalcode" 
+                                     value="#{storesController.selectedStore.postalcode}" 
+                                     title="#{bundle.StoreTitle_address_postalcode}" 
+                                     required="true"  />
+ 
+            
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{storesController.update}" 
+                                     value="#{bundle.Save}" 
+                                     update="display,:StoreListForm:datalist,:growl" 
+                                     oncomplete="handleSubmit(args, 'StoreEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" 
+                                     onclick="StoreEditDialog.hide()"                                     
+                                     ajax="false" 
+                                     immediate="true"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

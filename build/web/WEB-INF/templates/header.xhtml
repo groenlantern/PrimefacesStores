@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+$Id$ 
+$Author$
+$Date$
+ 
+$Rev$
+ 
+$LastChangedBy$ 
+$LastChangedRevision$
+$LastChangedDate$
+ 
+$URL$
+ 
+(C) 2016 Stellr  All Rights Reserved
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <body>
+        <ui:composition>
+            <!-- NAVIGATION -->
+            <div class="top-bar" role="navigation">
+                <div class="top-bar-left logo" style="cursor:pointer;" onclick="location.href = '/StoresAdminConsole/faces/index.xhtml';">
+                </div>
+                <div id="responsive-menu">
+                    <div class="top-bar-right">
+                        <ul class="dropdown menu" data-dropdown-menu="data-dropdown-menu">
+                            <li><a href="#">Menu</a>
+                                <ul class="menu vertical">
+                                    <li><a href="/StoresAdminConsole/faces/index.xhtml">#{bundle.Home}</a></li>
+                                    <li><a href="/StoresAdminConsole/faces/pages/store/StoreList.xhtml">#{bundle.ListStoreTitle}</a></li>
+                                    <li><a href="/StoresAdminConsole/faces/pages/upload/StoreUpload.xhtml">#{bundle.UploadIndex}</a></li>
+                                    <li>
+                                        <h:form>
+                                            <h:commandButton class="button logout" action="#{authController.logout}" value="Logout" />
+                                        </h:form>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </ui:composition>
+    </body>
+</html>

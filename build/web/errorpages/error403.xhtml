@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+$Id$ 
+$Author$
+$Date$
+ 
+$Rev$
+ 
+$LastChangedBy$ 
+$LastChangedRevision$
+$LastChangedDate$
+ 
+$URL$
+ 
+(C) 2016 Stellr  All Rights Reserved
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+     
+        <!--  CUSTOM CSS AND FOUNDATION CSS -->
+        <h:outputStylesheet library="css" name="foundation.css" />
+        <h:outputStylesheet library="css" name="foundation-icons.css" />
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <h:outputStylesheet library="css" name="main.css"/>
+
+        <!-- JAVASCRIPT DEPENDENCIES -->
+        <h:outputScript library="js" name="foundation.js" />
+
+        <!-- CUSTOM JAVASCRIPT -->
+        <h:outputScript library="js" name="custom.js" />
+
+        <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+        <title>StoresAdminConsole - 403 Error</title>
+    </h:head>
+    <h:body>
+
+        <!-- WRAPPER -->
+        <div id="wrapper">
+
+            <!-- HEADER-->
+            <div id="header" class="row">
+                <div class="top-bar" role="navigation">
+                    <div class="top-bar-left logo" style='cursor:pointer; background-image:url("http://localhost:8080/StoresAdminConsole/resources/img/Stellr_logo1.png");' onclick="location.href = '/StoresAdminConsole/faces/index.xhtml';">
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CONTENT -->
+            <div id="content" class="row">
+                <div class="title-bar titleBar homepageText">
+                    <h3>403 Error</h3>
+                </div>
+                <div class="mainContent row">
+                    <div class="small-12 errorBox">
+                        <br/>
+                        <p>Server Error.</p>
+                        <p>Please try login as a different user or contact administration.</p>
+                        <h:form>
+                            <h:commandButton class="button" action="#{authController.logout}" value="Login Page" />
+                        </h:form>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- FOOTER -->
+            <div id="footer" class="row">
+                <div id="footer"></div>
+            </div>
+
+        </div>
+    </h:body>  
+</html>
+

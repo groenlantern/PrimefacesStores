@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+$Id$ 
+$Author$
+$Date$
+ 
+$Rev$
+ 
+$LastChangedBy$ 
+$LastChangedRevision$
+$LastChangedDate$
+ 
+$URL$
+ 
+(C) 2016 Stellr  All Rights Reserved
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/WEB-INF/templates/layoutUpload.xhtml">
+
+        <ui:define name="content">
+
+            <p:panel>
+                <center>
+                    <div style="position: relative; width:90%; ">
+                        <fieldset   class=" fd-zone dz-drag-hover"   >
+                            <legend><h:outputText value="#{bundle.dropfiletoupload}"/></legend>
+
+                            <form id="dropForm" action="/StoresAdminConsole/UploadServlet" class="dropzone"  
+                                  onclick="try {
+                                              dropzoneInstance.removeAllFiles();
+                                          } catch (e) {
+                                          }
+                                  " >
+
+                                <div style=" cursor: copy; " >
+
+
+                                    <div class="fallback"  >
+                                        <input name="file" type="file" multiple="multiple" />
+                                    </div>
+
+                                    <p class="dz-message" ><h:outputText value="#{bundle.clicktobrowse}"></h:outputText></p>    
+
+                                </div>
+
+                            </form>
+
+                        </fieldset>
+
+                    </div>
+
+                    <br></br>
+
+                    <h:form id="CSVListForm">
+
+                        <p:remoteCommand name="rcall" update=":CSVListForm,:growl" process="@this" partialSubmit="true"  />
+
+                        <p:panel style=" border-style:solid; border-width:1px;" rendered="#{ UploadServlet.rowData != null }"  >        
+
+                            <h:outputText value="#{bundle.fifteenRows}"></h:outputText>
+
+                            <p:dataTable widgetVar="csvDatalist" id="csvDatalist" value="#{UploadServlet.rowData}" var="item" 
+                                         rows="16"    editable="true" editMode="cell" rowIndexVar="rowindex" emptyMessage="" 
+                                         rendered="#{ UploadServlet.rowData != null }"  resizableColumns="true" tableStyle="width:auto"  > 
+
+                                <p:columns style="#{ (rowindex != 0 and colIndex == 0)?' text-align: center;   ':' '  } 
+                                              #{ (rowindex == 0 )?' text-align: center;   ':' '  } " value="#{UploadServlet.colData}" var="columnObj" columnIndexVar="colIndex"  >
+
+                                    <!--Is Header / Column Name-->
+                                    <h:outputText value="#{bundle.ColumnLabel}" rendered="#{ rowindex == 0 and  colIndex == 0 }"  style="color:darkblue; font-weight: bolder;" />                                
+                                    <ui:fragment rendered="#{ rowindex == 0 and  colIndex == 0 }" ><hr/></ui:fragment>
+                                    <h:outputText value="#{bundle.HeaderRowLabel}" rendered="#{ rowindex == 0 and  colIndex == 0 }"  style="color:darkblue; font-weight: bolder;" />
+
+                                    <!--Normal Rows -->
+                                    <h:outputText value="#{ item[colIndex].trim()   }" rendered="#{ rowindex != 0 and  colIndex != 0 }"   />
+
+                                    <!--Column Selection Row -->
+                                    <h:selectOneMenu value="#{item[colIndex]}"  rendered="#{ rowindex == 0 and colIndex > 0 }"  style="color:darkblue; font-weight: bolder;" >
+
+                                        <f:selectItem itemDisabled="true" 
+                                                      itemLabel="#{bundle.Select_One.trim()  }"  />
+
+                                        <f:selectItems value="#{UploadServlet.columnSelection}"
+                                                       var="colItem"
+                                                       itemLabel="#{colItem.columnDescription.trim()  }"
+                                                       actionListener=""
+                                                       itemValue="#{colItem}"/>
+
+
+                                    </h:selectOneMenu>
+
+                                    <!-- Checkbox for header row-->
+                                    <p:selectBooleanCheckbox value="#{item[colIndex]}" 
+                                                             rendered="#{ rowindex != 0 and colIndex == 0 }" 
+                                                             style="position:relative; background:none;padding:none;border-style:none; " />
+
+                                </p:columns> 
+
+                            </p:dataTable>
+
+                            <p:commandButton actionListener="#{UploadServlet.commitFileData}" 
+                                             value="#{bundle.UploadButton}" 
+                                             update=":CSVListForm,:growl" 
+                                             oncomplete=" dropzoneInstance.removeAllFiles(); " />
+
+                            <p:commandButton actionListener="#{UploadServlet.initRowData}" 
+                                             value="#{bundle.Reset}" 
+                                             onclick=" dropzoneInstance.removeAllFiles(); "
+                                             immediate="true"
+                                             update=":CSVListForm,:growl" />
+
+                        </p:panel>
+
+
+                    </h:form>
+
+                </center>
+            </p:panel>
+        </ui:define>
+
+    </ui:composition>
+
+</html>

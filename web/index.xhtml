@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- 
+ $Id: index_1.xhtml 1396 2016-09-07 12:56:47Z Andre $ 
+ $Author: Andre $
+ $Date: 2016-09-07 14:56:47 +0200 (Wed, 07 Sep 2016) $
+ 
+ $Rev: 1396 $
+ 
+ $LastChangedBy: Andre $ 
+ $LastChangedRevision: 1396 $
+ $LastChangedDate: 2016-09-07 14:56:47 +0200 (Wed, 07 Sep 2016) $
+ 
+ $URL: https://dev2:8443/svn/HALO170/trunk172/StoresAdminConsole/web/index_1.xhtml $
+
+ (C) 2016 Stellr  All Rights Reserved 
+
+ -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" >
+
+    <ui:composition template="/WEB-INF/templates/layout.xhtml">
+
+        <ui:define name="titlebar">
+           <h3><h:outputText value="#{bundle.StoresAdministrationHomeTitle}"></h:outputText></h3>
+        </ui:define>
+
+        <ui:define name="content">
+            <div class="boxWrapper row">
+                <div class="small-12 medium-6 column dashBox" onclick="location.href = '/StoresAdminConsole/faces/pages/store/StoreList.xhtml';">
+                    <div class="small-12"><img src="${request.contextPath}/resources/img/persoconf.png" /></div>
+                    <div class="small-12">
+                        <p><h:outputText value="#{bundle.StoresIndex}"></h:outputText></p>
+                    </div>
+                </div>             
+
+                <div class="small-12 medium-6 column dashBox" onclick="location.href = '/StoresAdminConsole/faces/pages/upload/StoreUpload.xhtml';">
+                    <div class="small-12"><img src="${request.contextPath}/resources/img/database-u.png" /></div>
+                    <div class="small-12">
+                        <p><h:outputText value="#{bundle.UploadIndex}"></h:outputText></p>
+                    </div>
+                </div>             
+
+            </div>
+        </ui:define>
+    </ui:composition>
+</html>
+

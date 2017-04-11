@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- 
+ $Id: logon.xhtml 1396 2016-09-07 12:56:47Z Andre $ 
+ $Author: Andre $
+ $Date: 2016-09-07 14:56:47 +0200 (Wed, 07 Sep 2016) $
+ 
+ $Rev: 1396 $
+ 
+ $LastChangedBy: Andre $ 
+ $LastChangedRevision: 1396 $
+ $LastChangedDate: 2016-09-07 14:56:47 +0200 (Wed, 07 Sep 2016) $
+ 
+ $URL: https://dev2:8443/svn/HALO170/trunk172/StoresAdminConsole/web/logon.xhtml $
+
+ (C) 2016 Stellr  All Rights Reserved 
+
+ -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:head>
+      
+        <!--  CUSTOM CSS AND FOUNDATION CSS -->
+        <h:outputStylesheet library="css" name="foundation.css" />
+        <h:outputStylesheet library="css" name="foundation-icons.css" />
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <h:outputStylesheet library="css" name="main.css"/>
+
+        <!-- JAVASCRIPT DEPENDENCIES -->
+        <h:outputScript library="js" name="foundation.js" />
+
+        <!-- CUSTOM JAVASCRIPT -->
+        <h:outputScript library="js" name="custom.js" />
+
+        <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+        <title>Stores Admin</title>
+    </h:head>   
+    <h:body>
+
+        <!-- WRAPPER -->
+        <div id="wrapper">
+
+            <!-- HEADER-->
+            <div id="header" class="row">
+                <div class="top-bar" role="navigation">
+                    <div class="top-bar-left logo" style='cursor:pointer; background-image:url("http://localhost:8080/StoresAdminConsole/resources/img/Stellr_logo1.png");' onclick="location.href = '/StoresAdminConsole/faces/index.xhtml';">
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CONTENT -->
+            <div id="content" class="row">
+                <div class="title-bar titleBar homepageText">
+                    <h3>Welcome to Stores Admin Console</h3>
+                </div>
+                <div class="mainContent row">
+                    <div class="logon">
+                        <form action="j_security_check" method="POST">
+                            <h:panelGroup>
+                                <h:outputLabel for="username" value="Username" />
+                                <input id="username" required="true" type="text" name="j_username"  />
+
+                                <h:outputLabel for="password" value="Password" />
+                                <input id="password" value="" size="20"  type="password" name="j_password" />
+
+                                <input type="submit" class="button" value="Login" id="login" />
+                            </h:panelGroup>
+                        </form>
+                    </div>       
+
+                </div>
+            </div>
+
+            <!-- FOOTER -->
+            <div id="footer" class="row">
+                <div id="footer"><h6 class="text-right">Stores Administration | &copy; Stellr 2016</h6></div>
+            </div>
+
+        </div>
+    </h:body>
+</html>
+

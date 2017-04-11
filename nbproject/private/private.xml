@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group name="Halo172">
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/pages/account/List.xhtml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/WEB-INF/templates/content.xhtml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/data/Merchantcategory.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/data/Store.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/WEB-INF/faces-config.xml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/errorpages/error500.xhtml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/util/JsfUtil.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/resources/css/main.css</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/model/DPFacade.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/WEB-INF/templates/layout.xhtml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/resources/js/custom.js</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/resources/css/jsfcrud.css</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/util/Constants.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/util/Password.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/WEB-INF/web.xml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/WEB-INF/glassfish-resources.xml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/util/Mailer.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/resources/js/jsfcrud.js</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/pages/account/Edit.xhtml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/resources/js/foundation.js</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/LevelChecker.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/Bundle.properties</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/data/Distributionpartneraggregator.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/data/Distributionpartner.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/data/Address.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/logon.xhtml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/WEB-INF/templates/titlebar.xhtml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/resources/js/foundation.min.js</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/errorpages/error404.xhtml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/model/AbstractFacade.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/model/StoreFacade.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/util/CentsConverter.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/util/AccountListComparator.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/index.xhtml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/model/PropertiesFacade.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/model/AccountFacade.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/resources/css/foundation.css</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/errorpages/error403.xhtml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/template.xhtml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/WEB-INF/templates/sidebar.xhtml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/pages/account/Create.xhtml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/AuthController.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/WEB-INF/templates/header.xhtml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/resources/js/jquery.js</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/WEB-INF/templates/footer.xhtml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/AccountController.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/pages/account/Topup.xhtml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/data/Catalogue.java</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/resources/css/foundation-icons.css</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/loginError.xhtml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/web/pages/account/View.xhtml</file>
+            <file>file:/home/andre/Halo172/AccountsAdminConsole/src/java/stellr/util/accounts/admin/data/Storetype.java</file>
+        </group>
+        <group name="stellr172"/>
+        <group name="HALO 170 Group 20161012-08:58:24"/>
+    </open-files>
+</project-private>
